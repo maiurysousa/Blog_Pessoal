@@ -12,5 +12,5 @@
   
   <p><h3>Dicionário de Dados
   <br><br>
-  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/2021-10-26%20(4).png"/>
+  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/2021-10-26%20(9).png"/>
   </div>
