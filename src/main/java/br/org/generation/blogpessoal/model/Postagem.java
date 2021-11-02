@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 public class Postagem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // tem como finalidade incrementar um valor a cada nova inserção / gerar um tipo a partir de uma identiicação usado para cmeçar uma lista a partir de um número específico / az relação entre a culuna id do mySQL e do  STS
 	private long id;
 	
 	@NotNull(message = "O atributo título é obrigatório!")
@@ -29,7 +29,7 @@ public class Postagem {
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	private Date data = new java.sql.Date(System.currentTimeMillis()); //Contador que retorna um número que é a quantidade de milisegundos a partir da hora e do lugar que estou
 	
 	public long getId() {
 		return id;

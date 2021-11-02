@@ -26,17 +26,17 @@ public class PostagemController {
 	@Autowired
 	private PostagemRepository postagemRepository;
 	
-	@GetMapping //retorna a lista com todos os recursos que estão no endereço /postagens
+	@GetMapping //retorna a lista com todos os recursos que estão no endereço postagens
 	public ResponseEntity<List<Postagem>> getAll(){
 		return ResponseEntity.ok(postagemRepository.findAll());
 		// select * from tb_postagens;
 	}
 	
 	@GetMapping("/{id}") //retorna um recurso específico indentificado pelo id
-	public ResponseEntity<Postagem> getById(@PathVariable long id){
-		return postagemRepository.findById(id) //método de busca
-				.map(resposta -> ResponseEntity.ok(resposta)) // mostra e dá um status de ok//ou vai receber o dado ou um objto nulo
-				.orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Postagem> getById(@PathVariable long id){ // tipo long = bigint
+		return postagemRepository.findById(id) // método de busca - Encontre pelo id 
+				.map(resposta -> ResponseEntity.ok(resposta)) // Um papa que vai chegar a informação e trazer ela de volta com um status de ok ou receber o dado/objeto nulo
+				.orElse(ResponseEntity.notFound().build()); // if else / notfound - mensagem de  erro 404 - não encontrado / build - uma forma de compactar informaçãoes e mandar de volta
 		// select * from tb_postagens where id = 1;
 	}
 	
@@ -46,18 +46,27 @@ public class PostagemController {
 	}
 	
 	@PostMapping    //insere um novo recurso
-	public ResponseEntity<Postagem> postPostagem(@RequestBody Postagem postagem){ //parâmetro do tipo postagem que vou chamar depostagem
+	public ResponseEntity<Postagem> postPostagem(@RequestBody Postagem postagem){ //parâmetro do tipo postagem que será chamado de postagem
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
 	}
 	
 	@PutMapping    //atualiza um recurso existente, caso o recurso não exista retorna um notFound
-	public ResponseEntity<Postagem> putPostagem(@RequestBody Postagem postagem){ //parâmetro do tipo postagem que vou chamar depostagem
-		return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+	public ResponseEntity<Postagem> putPostagem(@RequestBody Postagem postagem){ 
+		//return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+		return postagemRepository.findById(postagem.getId())
+				.map(resposta -> ResponseEntity.ok(postagemRepository.save(postagem)))
+				.orElse(ResponseEntity.notFound().build());				
 	}
 	
 	@DeleteMapping("/{id}")    //deleta um recurso existente, caso o recurso não exista retorna um notFound
-	public void deletePostagem (@PathVariable long id) {
-		postagemRepository.deleteById(id);
+	public ResponseEntity<?> deletePostagem (@PathVariable long id) {
+		//public void deletePostagem (@PathVariable long id) {
+		//postagemRepository.deleteById(id);
+		return postagemRepository.findById(id)
+				.map(checagem -> {postagemRepository.deleteById(id);
+				return ResponseEntity.ok().build();
+				})
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 }
