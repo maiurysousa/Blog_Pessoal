@@ -36,7 +36,7 @@ public class PostagemController {
 	public ResponseEntity<Postagem> getById(@PathVariable long id){ // tipo do id = bigint
 		return postagemRepository.findById(id) // método de busca - Encontre pelo id 
 				.map(resposta -> ResponseEntity.ok(resposta)) // mapeia a informação, checa ela e traz de volta com um status de ok ou recebe o dado/objeto nulo
-				.orElse(ResponseEntity.notFound().build()); // se não, devolve ruma mensagem de erro 404 (não encontrado) / build - uma forma de compactar informaçãoes e mandar de volta
+				.orElse(ResponseEntity.notFound().build()); // se não, devolve uma mensagem de erro 404 (não encontrado) / build - uma forma de compactar informaçãoes e mandar de volta
 		// select * from tb_postagens where id = 1;
 	}
 	
