@@ -46,17 +46,28 @@ public class UsuarioController {
 	@PostMapping("/logar")
 	public ResponseEntity<UsuarioLogin> login(@RequestBody Optional<UsuarioLogin> user) {
 		return usuarioService.autenticarUsuario(user)
-			.map(respostaAutenticacao -> ResponseEntity.ok(respostaAutenticacao))
+			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	
+	/*Vai checar se a autenticação do método autenticarUsuário(da classe de serviço) deu certo
+	 * para efetuar login na api.
+	 * 
+	 * Caso o login tenha sido bem sucedido, os dados do usuário e o token 
+	 * são exibidos.*/
+	
 	}
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> postUsuario(@Valid @RequestBody Usuario usuario) {
 
 		return usuarioService.cadastrarUsuario(usuario)
-			.map(respostaCadastro -> ResponseEntity.status(HttpStatus.CREATED).body(respostaCadastro))
+			.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 
+		/*Executa o cadastro do usuário para criar um novo na api e se deu certo
+		 * exibe as mensagens (Response Status) pertinentes. 
+		 * 
+		 * Caso cadastro tenha sido bem sucedido, os dados do usuário são exibidos.*/
 	}
 
 	@PutMapping("/atualizar")
@@ -64,6 +75,13 @@ public class UsuarioController {
 		return usuarioService.atualizarUsuario(usuario)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
+		/**
+		 * Atualiza os dados de um usuário na api. O método da classe Controladora checa 
+		 * se deu certo e exibe as mensagens (Response Status) pertinentes. 
+		 * 
+		 * Caso a atualização tenha sido bem sucedida, os dados do usuário 
+		 * atualizados são exibidos.
+		 */
 	}
 
 }
