@@ -48,6 +48,17 @@ public class Usuario {
 	 * CascadeType.ALL -> Ele propaga todas a operações (Inserir, Listar, Atualizar e Apagar)
 	 * de um objeto Pai para um objeto Filho. 
 	 */
+	
+
+	public Usuario(long id, String nome, String usuario, String senha) {
+		// Primeiro método Construtor
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+
+	public Usuario() {	}	// Segundo método Construtor
 
 	public long getId() {
 		return id;

@@ -59,10 +59,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 			 */
 	}
 
-	/**
-	 *  
-	 */
-	
 	@Bean 
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -76,7 +72,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 		 *  O método hash Bcrypt é responsável por criptografar a senha do usuário utilizando o
 		 */
 	}
-
 	
 	 @Override
 	protected void configure(HttpSecurity http) throws Exception {
