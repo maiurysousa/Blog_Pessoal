@@ -8,13 +8,13 @@
 <div align = "center">
   <p><h3>DER - Diagrama Entidade Relacionamento
   <br><br>
-  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentos/baixados.png?raw=true"/>
+  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentacao/baixados.png"/>
   
   ##
   
   <p><h3>Dicionário de Dados
   <br><br>
-  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentos/2021-10-26%20(9).png?raw=true"/>
+  <img width="900px" src="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentacao/2021-10-26%20(9).png"/>
   </div>
   
   ##
@@ -39,5 +39,6 @@
  <a href="https://spring.io/projects/spring-boot">Spring Boot </a><br><br>
  <a href="https://spring.io/projects/spring-security">Spring Security</a><br><br>
  <a href="https://github.com/maiurysousa/Spring/blob/main/Generation/Documenta%C3%A7%C3%A3o/Guia%20Jpa.pdf">Spring data JPA</a>
+ <a href="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentacao/Fl%C3%B3reo%20-%20Blog%20Pessoal.pdf">Documentação Flóreo - Blog Pessoal</a>
 
 
