@@ -52,7 +52,7 @@ public class UsuarioRepositoryTest {
 		assertEquals(3, listaDeUsuarios.size());
 		assertTrue(listaDeUsuarios.get(0).getNome().equals("João da Silva"));
 		assertTrue(listaDeUsuarios.get(1).getNome().equals("Manuela da Silva"));
-		assertTrue(listaDeUsuarios.get(2).getNome().equals("Adriana da Silva"));		
+		assertTrue(listaDeUsuarios.get(2).getNome().equals("Adriana da Silva"));
 	}
 
 }

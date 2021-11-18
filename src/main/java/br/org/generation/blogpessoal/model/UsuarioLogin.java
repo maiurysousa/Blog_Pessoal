@@ -2,7 +2,6 @@ package br.org.generation.blogpessoal.model;
 
 public class UsuarioLogin {
 	
-
 	/* Essa Classe não terá nenhuma annotation porque não irá gerar 
 	 * uma tabela no Banco de Dados.
 	 * Sua principal função é servir de apoio ao processo de login na api.

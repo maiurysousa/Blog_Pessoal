@@ -42,7 +42,6 @@ public class TemaController {
 	
 	@PutMapping
 	public ResponseEntity<Tema> putTema (@RequestBody Tema tema){
-		//return ResponseEntity.ok(repository.save(tema));		
 		return temaRepository.findById(tema.getId())
 				.map(resposta -> {
 					return ResponseEntity.ok().body(temaRepository.save(tema));
@@ -52,8 +51,6 @@ public class TemaController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletePostagem(@PathVariable long id){
-	/*public void delete(@PathVariable long id) {
-		repository.deleteById(id);*/
 		return temaRepository.findById(id)
 				.map(resposta -> {
 					temaRepository.deleteById(id);

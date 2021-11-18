@@ -11,7 +11,8 @@ import br.org.generation.blogpessoal.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-	public Optional<Usuario> findByUsuario(String usuario); //busca um usuário pelo seu usuario (email).
+	public Optional<Usuario> findByUsuario(String usuario);
+	//busca um usuário pelo seu usuario (email).
 
 	//select * from tb_usuarios where usuario = "usuario procurado"
 	

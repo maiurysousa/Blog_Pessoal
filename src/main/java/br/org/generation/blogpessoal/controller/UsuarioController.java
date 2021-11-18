@@ -49,7 +49,7 @@ public class UsuarioController {
 			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	
-	/*Vai checar se a autenticação do método autenticarUsuário(da classe de serviço) deu certo
+	/* Checa se a autenticação do método autenticarUsuário(da classe de serviço) deu certo
 	 * para efetuar login na api.
 	 * 
 	 * Caso o login tenha sido bem sucedido, os dados do usuário e o token 
@@ -64,7 +64,7 @@ public class UsuarioController {
 			.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 
-		/*Executa o cadastro do usuário para criar um novo na api e se deu certo
+		/* Executa o cadastro do usuário para criar um novo na api e se deu certo
 		 * exibe as mensagens (Response Status) pertinentes. 
 		 * 
 		 * Caso cadastro tenha sido bem sucedido, os dados do usuário são exibidos.*/

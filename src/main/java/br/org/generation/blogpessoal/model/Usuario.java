@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
@@ -24,16 +26,17 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotNull(message = "O atributo Nome é Obrigatório!")
+	@NotNull(message = "O atributo Nome é obrigatório!")
 	private String nome;
-
-	@NotNull(message = "O atributo Usuário é Obrigatório!")
+	
+	@ApiModelProperty(example = "email@email.com.br")
+	@NotNull(message = "O atributo Usuário é obrigatório!")
 	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 
 
-	@NotBlank(message = "O atributo Senha é Obrigatório!") // Oatributo não deve ser nulo e/ou conter espaços em branco.
-	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres") //apenas min, pois a mesma terá uma tamanho muito maior quando criptografada
+	@NotBlank(message = "O atributo Senha é obrigatório!") // O atributo não deve ser nulo e/ou conter espaços em branco.
+	@Size(min = 8, message = "A Senha deve conter no mínimo 8 caracteres") //apenas min, pois a mesma terá uma tamanho muito maior quando criptografada
 	private String senha;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)

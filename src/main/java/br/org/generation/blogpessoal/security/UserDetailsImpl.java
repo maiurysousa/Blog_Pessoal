@@ -19,7 +19,7 @@ public class UserDetailsImpl implements UserDetails {
 	private String userName; //Credencial do usuário
 	private String password; //Credencial do usuário
 	private List<GrantedAuthority> authorities; //o que ele pode e não pode fazer
-	//Autorição feita através da Collection authorities do tipo GrantedAuthority
+	//Autorização feita através da Collection authorities do tipo GrantedAuthority
 	
 
 	public UserDetailsImpl(Usuario usuario) { //Método construtor com parâmetros 

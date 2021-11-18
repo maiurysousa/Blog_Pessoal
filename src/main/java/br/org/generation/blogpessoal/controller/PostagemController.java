@@ -23,7 +23,7 @@ import br.org.generation.blogpessoal.repository.PostagemRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*") // a classe vai aceitar requisições de qlqr origem
 public class PostagemController {
 	
-	@Autowired // garante que os serviçoes da interface seja acessado a patir do controller
+	@Autowired // garante que os serviços da interface seja acessado a patir do controller
 	private PostagemRepository postagemRepository;
 	
 	@GetMapping //retorna a lista com todos os recursos que estão no endereço postagens
@@ -52,7 +52,6 @@ public class PostagemController {
 	
 	@PutMapping    //atualiza um recurso existente e caso não exista retorna um notFound
 	public ResponseEntity<Postagem> putPostagem(@RequestBody Postagem postagem){ 
-		//return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
 		return postagemRepository.findById(postagem.getId())
 				.map(resposta -> ResponseEntity.ok(postagemRepository.save(postagem)))
 				.orElse(ResponseEntity.notFound().build());				
@@ -60,8 +59,6 @@ public class PostagemController {
 	
 	@DeleteMapping("/{id}")    //deleta um recurso existente, caso o recurso não exista retorna um notFound
 	public ResponseEntity<?> deletePostagem (@PathVariable long id) {
-		//public void deletePostagem (@PathVariable long id) {
-		//postagemRepository.deleteById(id);
 		return postagemRepository.findById(id)
 				.map(checagem -> {postagemRepository.deleteById(id);
 				return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

@@ -9,5 +9,6 @@ import br.org.generation.blogpessoal.model.Postagem;
 
 @Repository // indica que a classe se trata de um repositório
 public interface PostagemRepository extends JpaRepository<Postagem, Long>{
-	public List <Postagem> findAllByTituloContainingIgnoreCase(String titulo); // buscar tudo que contem dentro do título sem levar em consideração maiúscula ou minuscula
+	public List <Postagem> findAllByTituloContainingIgnoreCase(String titulo); 
+	// buscar tudo que contem dentro do título sem levar em consideração maiúscula ou minuscula
 }
