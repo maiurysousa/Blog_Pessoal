@@ -30,6 +30,10 @@
 - MySQL
 
 - Postman
+     
+- Heroku
+   
+- Swagger
   
  ##
 
@@ -38,7 +42,7 @@
  <a href="https://spring.io/projects/spring-framework">Spring Framework </a><br><br>
  <a href="https://spring.io/projects/spring-boot">Spring Boot </a><br><br>
  <a href="https://spring.io/projects/spring-security">Spring Security</a><br><br>
- <a href="https://github.com/maiurysousa/Spring/blob/main/Generation/Documenta%C3%A7%C3%A3o/Guia%20Jpa.pdf">Spring data JPA</a>
+ <a href="https://github.com/maiurysousa/Spring/blob/main/Generation/Documenta%C3%A7%C3%A3o/Guia%20Jpa.pdf">Spring data JPA</a><br><br>
  <a href="https://github.com/maiurysousa/Blog_Pessoal/blob/main/Documentacao/Fl%C3%B3reo%20-%20Blog%20Pessoal.pdf">Documentação Flóreo - Blog Pessoal</a>
 
 
